@@ -1,7 +1,5 @@
 <?
-
 /*
-
 Mysql table
 CREATE TABLE `energy` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -10,12 +8,11 @@ CREATE TABLE `energy` (
   `diff_watts` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 */
 /* DB creds*/
 require "/home/sri/sriramrajan.com/ssl/sri/conf.php";
-$MAC_ADDR = "" /* replace this with the mac of the lwrf receiver*/
-$url = "https://lightwaverfhost.co.uk/mobile/meter_free_load.php?email=sriram.rajan@gmail.com&mac=$MAC_ADDR";
+
+$url = "https://lightwaverfhost.co.uk/mobile/meter_free_load.php?email=$LWRF_EMAIL&mac=$LWRF_MAC";
 
 $curl_options = array (CURLOPT_RETURNTRANSFER => true, // return web page
     CURLOPT_HEADER => false, // don't return headers
@@ -44,4 +41,3 @@ $query_ins = "INSERT into $mysql_table_energy (`time`,`watts`) values(NOW(),$tot
 $result_ins = mysql_query($query_ins) or die (mysql_error());
 
 ?>
-
