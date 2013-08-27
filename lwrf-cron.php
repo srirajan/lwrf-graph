@@ -9,6 +9,8 @@ CREATE TABLE `energy` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 */
+
+
 /* DB creds*/
 require "/home/sri/sriramrajan.com/ssl/sri/conf.php";
 
