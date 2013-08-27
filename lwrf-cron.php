@@ -1,5 +1,7 @@
 <?
 /*
+
+
 Mysql table
 CREATE TABLE `energy` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
